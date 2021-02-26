@@ -1,0 +1,5 @@
+html{
+    height: 100%;
+    background-image: linear-gradient(to top, #ffaaff 0%, #ffd1ff 500%);
+    background-position: 'fixed'
+}
