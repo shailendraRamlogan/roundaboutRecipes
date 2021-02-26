@@ -10,6 +10,7 @@ export const getRecipes = async (req, res) => {
 }
 
 export const createRecipe = async (req, res) =>{
+    console.log(req.body);
     const data = req.body;
     if(!data.name){
         return res.send({
@@ -23,12 +24,12 @@ export const createRecipe = async (req, res) =>{
             message: 'Error: Calories cannot be blank.'
           });
     }
-    if(!data.image){
+    /*if(!data.image){
         return res.send({
             success: false,
             message: 'Error: Must include an image'
           });
-    }
+    }*/
     if(!data.ingredients){
         return res.send({
             success: false,

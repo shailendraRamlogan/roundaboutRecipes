@@ -63,7 +63,7 @@ export const createUser = async (req, res) =>{
 
 export const findUser = async (req, res) =>{
     const currid = req.body.token;
-    console.log(req.token);
+    //console.log(req.body.token);
     user.find({
         _id: currid
     }, (err, previousUsers) =>{

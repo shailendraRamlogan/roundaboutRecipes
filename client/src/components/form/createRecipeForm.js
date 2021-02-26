@@ -24,23 +24,25 @@ const CreateRecipeForm = ()=>{
         dispatch(findUser(token))
             .then((payload) => {
                 postData.creator = payload.name;   
-            
+                console.log(payload.name);
+                dispatch(createRecipe(postData))
+                    .then((payload) => {
+                        if(payload.success === true){
+                            alert(payload.message);
+                            //clear();
+                        }
+                        else{
+                            alert(payload.message);
+                            //clear();
+                        }
+
+                        
+                
+                    });
         });
         
-        dispatch(createRecipe(postData))
-            .then((payload) => {
-                if(payload.success === true){
-                    alert(payload.message);
-                    clear();
-                }
-                else{
-                    alert(payload.message);
-                    clear();
-                }
-
-                   
+        console.log(postData);
         
-            });
         //window.location.href = "/account";
     }
 
