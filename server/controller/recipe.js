@@ -1,4 +1,5 @@
 import recipe from '../models/recipe.js';
+import user from '../models/user.js';
 
 export const getRecipes = async (req, res) => {
     try {
@@ -24,12 +25,12 @@ export const createRecipe = async (req, res) =>{
             message: 'Error: Calories cannot be blank.'
           });
     }
-    /*if(!data.image){
+    if(!data.image){
         return res.send({
             success: false,
             message: 'Error: Must include an image'
           });
-    }*/
+    }
     if(!data.ingredients){
         return res.send({
             success: false,
@@ -45,10 +46,29 @@ export const createRecipe = async (req, res) =>{
     const newRecipe = new recipe(data);
     try {
         await newRecipe.save();
-        res.status(201).json({
+        user.updateOne({
+            _id: newRecipe.creatorID
+        }, {
+            $push:{
+                createdRecipes: newRecipe._id
+            }
+        }, null, (err, sessions) => {
+            if(err){
+                console.log(err);
+                return res.send({
+                    success: false,
+                    message: 'Error: Server Error'
+                });
+            }
+            return res.send({
+                success: true,
+                message: 'Success: recipe created and successfully associated with user'
+            });
+        });
+        /*res.status(201).json({
             success: true,
             message: 'Success: Recipe successfully created'
-        });
+        });*/
     } catch (error) {
         res.status(409).json({message: error.message});
     }
