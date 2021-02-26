@@ -8,7 +8,7 @@ import {findUser} from '../../actions/users';
 import {createRecipe} from '../../actions/recipe';
 
 const CreateRecipeForm = ()=>{
-    const [postData, setPostData] = useState({name: '', calories: '', image: '', ingredients: [], creator: ''});
+    const [postData, setPostData] = useState({name: '', calories: '', image: '', ingredients: [], creator: '', creatorID: ''});
     const classes = useStyles();
     const dispatch = useDispatch();
     const [token, setToken] = useState({token: localStorage.getItem('roundaboutToken')});
@@ -23,17 +23,18 @@ const CreateRecipeForm = ()=>{
         //console.log(token);
         dispatch(findUser(token))
             .then((payload) => {
-                postData.creator = payload.name;   
-                console.log(payload.name);
+                postData.creator = payload.name;
+                postData.creatorID = token.token;   
+                //console.log(payload.name);
                 dispatch(createRecipe(postData))
                     .then((payload) => {
                         if(payload.success === true){
                             alert(payload.message);
-                            //clear();
+                            clear();
                         }
                         else{
                             alert(payload.message);
-                            //clear();
+                            clear();
                         }
 
                         

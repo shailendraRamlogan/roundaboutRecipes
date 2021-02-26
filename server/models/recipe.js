@@ -22,6 +22,10 @@ const recipeSchema = new Schema({
     creator:{
         type: String,
         required: true
+    },
+    creatorID:{
+        type: String,
+        required: true
     }
 });
 

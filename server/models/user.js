@@ -27,6 +27,12 @@ const userSchema = mongoose.Schema({
         type: Boolean,
         default: false
     },
+    savedRecipes:{
+        type: [String]
+    },
+    createdRecipes:{
+        type: [String]
+    }
 });
 
 userSchema.methods.generateHash = function(password) {

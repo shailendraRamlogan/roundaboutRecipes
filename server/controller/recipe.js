@@ -10,7 +10,7 @@ export const getRecipes = async (req, res) => {
 }
 
 export const createRecipe = async (req, res) =>{
-    console.log(req.body);
+    //console.log(req.body);
     const data = req.body;
     if(!data.name){
         return res.send({
