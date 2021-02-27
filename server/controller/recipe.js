@@ -10,6 +10,107 @@ export const getRecipes = async (req, res) => {
     }
 }
 
+export const getUserRecipes = async (req, res) => {
+    const userID = req.body.token;
+    
+    recipe.find({
+        creatorID: userID
+    }, (err, previousRecipes) =>{
+        if(err){
+            return res.send({
+                success: false,
+                message: 'Error: cannot find any recipes for this user'
+            });
+        } else if (previousRecipes.length > 0){
+            return res.send({
+                success: true,
+                message: 'success: recipes found',
+                recipes: previousRecipes
+            });
+
+        } else if (previousRecipes.length < 1){
+            return res.send({
+                success: false,
+                message: 'Error: no recipes for this user found'
+            });
+            
+        }
+    });
+}
+
+export const getSearchRecipes = async (req, res) => {
+    const param = req.body.param;
+    
+    recipe.find({
+        name: {$regex: param,$options: "i"}
+    }, (err, previousRecipes) =>{
+        if(err){
+            return res.send({
+                success: false,
+                message: `Error: cannot find any recipes containing ${param}`
+            });
+        } else if (previousRecipes.length > 0){
+            return res.send({
+                success: true,
+                message: 'success: recipes found',
+                recipes: previousRecipes
+            });
+
+        } else if (previousRecipes.length < 1){
+            return res.send({
+                success: false,
+                message: `Error: cannot find any recipes containing ${param}`
+            });
+            
+        }
+    });
+}
+
+export const addFavouriteRecipes = async (req, res) => {
+    const param = req.body;
+    const userid = param.userid;
+    const recipeid = param.recipeid;
+    
+   recipe.find({
+        _id: recipeid
+    }, (err, previousRecipes) =>{
+        if(err){
+            return res.send({
+                success: false,
+                message: `Error: cannot find specified recipe`
+            });
+        } else if (previousRecipes.length === 1){
+            user.findOneAndUpdate({
+                _id: userid,
+            }, {
+                $push:{
+                    savedRecipes: previousRecipes[0]._id
+                }
+            }, null, (error, sessions) => {
+                if(error){
+                    console.log(error);
+                    return res.send({
+                        success: false,
+                        message: 'Error: Server Error'
+                    });
+                }
+                return res.send({
+                    success: true,
+                    message: 'Recipe added to favourites'
+                });
+            });
+
+        } else{
+            return res.send({
+                success: false,
+                message: `Error: cannot find any recipes containing ${param}`
+            });
+            
+        }
+    });
+}
+
+
 export const createRecipe = async (req, res) =>{
     //console.log(req.body);
     const data = req.body;

@@ -2,27 +2,26 @@ import {makeStyles} from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     paper: {
-        marginLeft: '8%',
+        marginLeft: '4.5%',
         marginTop: '5%',
-        width: '80%',
+        width: '90%',
         padding: theme.spacing(2),
     },
     mainContainer: {
-        paddingBottom: '40%',
         marginTop: '5%',
         textAlign: 'center',
         justifyContent: 'center',
     },
-    authOptionContainer: {
-        marginTop: '5%',
+    accountPageButton: {
+        marginTop: '2.5%',
         width: '40%',
-        float: 'left',
         display: 'flex',
         flexWrap: 'wrap',
         paddingLeft: '5%',
         justifyContent: 'center',
       },
-      button: {
+    button: {
+      width: '30%',
         backgroundColor: '#0cad92',
         color:'white',
         "&:hover": {
@@ -30,8 +29,10 @@ export default makeStyles((theme) => ({
         }
       },
       gridContainer: {
+        paddingBottom: '20%',
+        marginTop: '5%',
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: '10px',
+        gap: '2%',
       },
 }));

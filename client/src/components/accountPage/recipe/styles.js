@@ -52,12 +52,11 @@ export default makeStyles({
   gridItem: {
     height: '800px',
     float: 'left',
-    width: '80%',
+    width: '100%',
     border: '1px solid rgba(0, 0, 0, 0.8)',
     paddingBottom: '2%',
     fontSize: '15px',
     textAlign: 'center',
-    marginLeft: '10%',
     marginBottom: '5%',
     backgroundColor: 'white',
     borderRadius: '5%',

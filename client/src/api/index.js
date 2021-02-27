@@ -9,3 +9,6 @@ export const logoutUser = (token) => axios.get(`${authUrl}/logout`, token);
 export const findUser = (usertoken) => axios.post(`${authUrl}/find`, usertoken);
 export const createRecipe = (recipe) => axios.post(`${recipeUrl}/create`, recipe);
 export const getRecipes = () => axios.get(`${recipeUrl}/get`);
+export const getUserRecipes = (userToken) => axios.post(`${recipeUrl}/getUserRecipes`, userToken);
+export const getSearchRecipes = (query) => axios.post(`${recipeUrl}/getSearch`, query);
+export const addFavouriteRecipes = (credentials) => axios.post(`${recipeUrl}/addFavourite`, credentials);
