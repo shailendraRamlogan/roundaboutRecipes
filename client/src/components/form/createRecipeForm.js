@@ -5,7 +5,7 @@ import FileBase from 'react-file-base64';
 
 import useStyles from './styles';
 import {findUser} from '../../actions/users';
-import {createRecipe} from '../../actions/recipe';
+import {createRecipe, getRecipes} from '../../actions/recipe';
 
 const CreateRecipeForm = ()=>{
     const [postData, setPostData] = useState({name: '', calories: '', image: '', ingredients: [], creator: '', creatorID: ''});

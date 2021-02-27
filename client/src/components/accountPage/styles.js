@@ -29,4 +29,9 @@ export default makeStyles((theme) => ({
           backgroundColor: "#ffaaff"
         }
       },
+      gridContainer: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: '10px',
+      },
 }));

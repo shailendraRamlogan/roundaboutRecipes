@@ -9,3 +9,13 @@ export const createRecipe = (recipe) => async (dispatch) =>{
         console.log(error);
     }
 }
+
+export const getRecipes = () => async (dispatch) =>{
+    try {
+        const {data} = await api.getRecipes();
+        dispatch({type: 'FETCHALL', payload: data});
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
