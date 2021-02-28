@@ -41,7 +41,7 @@ const Recipe = ({id,title, calories, image, ingredients}) => {
                     <li className={classes.ingredientX}>{ingredient}</li>
                 ))}
             </ol>
-            <Button onClick={handleFav}>Add To Favourites</Button>
+            <Button className={classes.favButton} onClick={handleFav}>Add To Favourites</Button>
         </div>
     );
 

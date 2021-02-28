@@ -98,5 +98,12 @@ export default makeStyles({
     paddingBottom: '10px',
     marginTop: '-3%',
     backgroundColor: '#EBF2EA',
+  },
+  favButton: {
+    backgroundColor: '#3CB371',
+    "&:hover": {
+      backgroundColor: "#2E8B57"
+    },
+    color: 'white'
   }
 });

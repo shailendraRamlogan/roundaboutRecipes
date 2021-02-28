@@ -97,5 +97,20 @@ export default makeStyles({
     paddingBottom: '10px',
     marginTop: '-3%',
     backgroundColor: '#EBF2EA',
+  },
+  removeButton: {
+    marginLeft: '5px',
+    backgroundColor: '#DC143C',
+    "&:hover": {
+      backgroundColor: "#B22222"
+    },
+    color: 'white'
+  },
+  editButton: {
+    backgroundColor: '#FFFF33',
+    "&:hover": {
+      backgroundColor: "#CCCC00"
+    },
+    color: 'black'
   }
 });

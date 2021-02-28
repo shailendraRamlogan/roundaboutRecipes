@@ -21,7 +21,7 @@ const SavedRecipe = ({title, calories, image, ingredients}) => {
                     <li className={classes.ingredientX}>{ingredient}</li>
                 ))}
             </ol>
-            <Button>Remove From Favourites</Button>
+            <Button className={classes.favButton}>Remove From Favourites</Button>
         </div>
     );
 
