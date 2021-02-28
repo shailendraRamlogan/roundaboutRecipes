@@ -78,56 +78,32 @@ export const getFavouriteRecipes = async (req, res) => {
                 success: false,
                 message: `Error: cannot find specified user`
             });
-        } else if (previousUsers.length === 1){
+        } 
+        else if(previousUsers.length ===   1){
             const recipes = previousUsers[0].savedRecipes;
-            const message = []
-            const toRemove = []
             
-            if(!recipes[0]){
+            if(recipes.length === 0){
                 return res.send({
                     success: false,
                     message: `No recipes to display`
                 });
             }
-            else{
-                for (var i = 0; i<recipes.length; i++){
-                    const curr = recipes[i];
-                    recipe.find({
-                        _id: curr
-                    }, (errors, currRecipes) =>{
-                        if(errors){
-                            return res.send({
-                                success: false,
-                                message: `Error: server error`
-                            });
-                        }
-                        
-                        if(currRecipes.length === 1){
-                            //console.log(currRecipes[0])
-                            message.push(currRecipes[0]);
-                            
-                        }
-                        //console.log(message);
-                        
-            
-                    });
+            recipe.find({
+                _id: {$in: recipes}
+            }, (error, currRecipes) => {
+                if(error){
                     return res.send({
-                            success: true,
-                            message: 'success: recipes found',
-                            recipes: message
-                        });
+                        success: false,
+                        message: `Error: server error`
+                    });
                 }
-            }
-            
-
-
-        } 
-        else{
-            return res.send({
-                success: false,
-                message: `Error: cannot find specified user`
+                return res.send({
+                    success: true,
+                    message: 'successfully found recipes',
+                    recipes: currRecipes
+                });
+                
             });
-            
         }
     });
 }
