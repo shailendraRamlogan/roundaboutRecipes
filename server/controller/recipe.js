@@ -108,13 +108,14 @@ export const getFavouriteRecipes = async (req, res) => {
                             
                         }
                         //console.log(message);
-                        return res.send({
+                        
+            
+                    });
+                    return res.send({
                             success: true,
                             message: 'success: recipes found',
                             recipes: message
                         });
-            
-                    });
                 }
             }
             
