@@ -8,6 +8,8 @@ export default (recipes = [], action) => {
             return [...recipes, action.payload];
         case 'FETCHSEARCHRECIPES':
             return [...recipes, action.payload];
+        case 'FETCHFAVOURITERECIPES':
+            return [...recipes, action.payload];
         case 'ADDTOFAVOURITES':
             return [...recipes, action.payload];
         default:

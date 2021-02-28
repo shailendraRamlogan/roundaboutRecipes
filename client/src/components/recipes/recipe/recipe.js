@@ -16,13 +16,13 @@ const Recipe = ({id,title, calories, image, ingredients}) => {
         //console.log(parameter);
         dispatch(addFavouriteRecipes(parameter))
             .then((payload) => {
+                //console.log(payload);
                 if(payload.success === true){
                     alert(payload.message);
                 }
                 else{
                     alert(payload.message);
                 }
-                
             });
     }
     return(

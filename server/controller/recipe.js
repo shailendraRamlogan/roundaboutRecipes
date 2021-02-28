@@ -66,6 +66,72 @@ export const getSearchRecipes = async (req, res) => {
     });
 }
 
+
+export const getFavouriteRecipes = async (req, res) => {
+    const param = req.body.token;
+    
+    user.find({
+        _id: param
+    }, (err, previousUsers) =>{
+        if(err){
+            return res.send({
+                success: false,
+                message: `Error: cannot find specified user`
+            });
+        } else if (previousUsers.length === 1){
+            const recipes = previousUsers[0].savedRecipes;
+            const message = []
+            const toRemove = []
+            
+            if(!recipes[0]){
+                return res.send({
+                    success: false,
+                    message: `No recipes to display`
+                });
+            }
+            else{
+                for (var i = 0; i<recipes.length; i++){
+                    const curr = recipes[i];
+                    recipe.find({
+                        _id: curr
+                    }, (errors, currRecipes) =>{
+                        if(errors){
+                            return res.send({
+                                success: false,
+                                message: `Error: server error`
+                            });
+                        }
+                        
+                        if(currRecipes.length === 1){
+                            //console.log(currRecipes[0])
+                            message.push(currRecipes[0]);
+                            
+                        }
+                        //console.log(message);
+                        return res.send({
+                            success: true,
+                            message: 'success: recipes found',
+                            recipes: message
+                        });
+            
+                    });
+                }
+            }
+            
+
+
+        } 
+        else{
+            return res.send({
+                success: false,
+                message: `Error: cannot find specified user`
+            });
+            
+        }
+    });
+}
+
+
 export const addFavouriteRecipes = async (req, res) => {
     const param = req.body;
     const userid = param.userid;
@@ -79,26 +145,52 @@ export const addFavouriteRecipes = async (req, res) => {
                 success: false,
                 message: `Error: cannot find specified recipe`
             });
-        } else if (previousRecipes.length === 1){
-            user.findOneAndUpdate({
-                _id: userid,
-            }, {
-                $push:{
-                    savedRecipes: previousRecipes[0]._id
+        } 
+        else if (previousRecipes.length === 1){
+            user.find(
+                {savedRecipes: recipeid},
+                (errors,previousIDs) =>{
+                    if(errors){
+                        return res.send({
+                            success: false,
+                            message: `Error: server error`
+                        });
+                    }
+                    if(previousIDs.length === 0){
+                        user.findOneAndUpdate({
+                            _id: userid,
+                        }, {
+                            $push:{
+                                savedRecipes: previousRecipes[0]._id
+                            }
+                        }, null, (error, sessions) => {
+                            if(error){
+                                console.log(error);
+                                return res.send({
+                                    success: false,
+                                    message: 'Error: Server Error'
+                                });
+                            }
+                            return res.send({
+                                success: true,
+                                message: 'Recipe added to favourites'
+                            });
+                        });
+                    }
+                    else if(previousIDs.length === 1){
+                        return res.send({
+                            success: true,
+                            message: `Error: recipe already added to your favourites`
+                        });
+                    }
+                    else{
+                        return res.send({
+                            success: false,
+                            message: `Error: server error`
+                        });
+                    }
                 }
-            }, null, (error, sessions) => {
-                if(error){
-                    console.log(error);
-                    return res.send({
-                        success: false,
-                        message: 'Error: Server Error'
-                    });
-                }
-                return res.send({
-                    success: true,
-                    message: 'Recipe added to favourites'
-                });
-            });
+            );
 
         } else{
             return res.send({
@@ -109,6 +201,7 @@ export const addFavouriteRecipes = async (req, res) => {
         }
     });
 }
+
 
 
 export const createRecipe = async (req, res) =>{

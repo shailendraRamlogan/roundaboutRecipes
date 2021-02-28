@@ -50,3 +50,13 @@ export const addFavouriteRecipes = (query) => async (dispatch) =>{
         console.log(error);
     }
 }
+
+export const getFavouriteRecipes = (token) => async (dispatch) =>{
+    try {
+        const {data} = await api.getFavouriteRecipes(token);
+        dispatch({type: 'FETCHFAVOURITERECIPES', payload: data});
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}

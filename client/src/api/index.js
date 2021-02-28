@@ -12,3 +12,4 @@ export const getRecipes = () => axios.get(`${recipeUrl}/get`);
 export const getUserRecipes = (userToken) => axios.post(`${recipeUrl}/getUserRecipes`, userToken);
 export const getSearchRecipes = (query) => axios.post(`${recipeUrl}/getSearch`, query);
 export const addFavouriteRecipes = (credentials) => axios.post(`${recipeUrl}/addFavourite`, credentials);
+export const getFavouriteRecipes = (userToken) => axios.post(`${recipeUrl}/getFavourite`, userToken);
