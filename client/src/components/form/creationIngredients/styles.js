@@ -74,6 +74,13 @@ export default makeStyles({
     listStyleType: 'none',
     borderBottom: '2px solid black',
   },
+  removeIngredientButton:{
+    marginRight: '5%',
+    borderRadius: '10px',
+    "&:hover": {
+      backgroundColor: "#dc143c"
+    },
+  },
   form: {
     paddingTop: '2%',
     paddingBottom: '5%',
@@ -94,7 +101,12 @@ export default makeStyles({
     borderRadius: '15px',
   },
   ingredient:{
-    backgroundColor: 'red',
+    backgroundColor: '#dcdcdc',
+  },
+  ingredientName:{
+    width: '100%',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    backgroundColor: '#f4f0ec',
   },
   images: {
     paddingTop: '20px',

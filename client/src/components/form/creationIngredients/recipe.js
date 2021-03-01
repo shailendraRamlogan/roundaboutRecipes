@@ -20,8 +20,9 @@ const SavedRecipe = ({name, post}) => {
     return(
         <div>
             <Container className={classes.ingredient}>
-            <p> {name} </p>
-            <Button onClick={removeIngredient}>X</Button>
+                
+                <p className={classes.ingredientName}> <Button className={classes.removeIngredientButton} onClick={removeIngredient}>X</Button>{name}  </p>
+            
             </Container>
         </div>
     );
