@@ -87,6 +87,7 @@ const CreateRecipeForm = ()=>{
                     <Typography variant="h6"> Ingredients: </Typography>
                     {postData.ingredients.map(ingredient =>(
                         <Recipe
+                            key = {ingredient}
                             post = {postData}
                             name = {ingredient}
                         />
