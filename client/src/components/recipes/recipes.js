@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import Recipe from './recipe/recipe.js';
 import useStyles from './styles';
 import {getRecipes, getSearchRecipes} from '../../actions/recipe';
-
+import { TextField, Button, Typography, Paper, Container} from '@material-ui/core';
 const SearchPage = () => {
     const classes = useStyles();
 
@@ -46,6 +46,7 @@ const SearchPage = () => {
           <button className={classes.searchButton} type="submit">Search</button>
         </form>
         <h2 className={classes.heading1}>All of these recipes include</h2>
+        <Paper className={classes.paper}>
         <div className={classes.gridContainer}>
           {recipes.map(recipe =>(
             <Recipe
@@ -58,6 +59,7 @@ const SearchPage = () => {
             />
           ))}
         </div>
+        </Paper>
         </div>
       );
     

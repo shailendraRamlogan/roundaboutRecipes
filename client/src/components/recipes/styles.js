@@ -11,6 +11,12 @@ export default makeStyles((theme) => ({
   actionDiv: {
     textAlign: 'center',
   },
+  paper: {
+    marginLeft: '8%',
+    marginTop: '5%',
+    width: '80%',
+    padding: theme.spacing(2),
+  },
   page: {
     minHeight: '100vh',
     paddingBottom: '5%',
