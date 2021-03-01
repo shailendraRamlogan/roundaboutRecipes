@@ -12,11 +12,23 @@ const CreateRecipeForm = ()=>{
     const classes = useStyles();
     const dispatch = useDispatch();
     const [token, setToken] = useState({token: localStorage.getItem('roundaboutToken')});
-
+    const [currIngredient, setCurrIngredient] = useState("");
 
     const clear = () => {
         setPostData({name: '', calories: '', image: '', ingredients: [], creator: ''});
     };
+
+    const addIngredient = (e) =>{
+        e.preventDefault();
+        console.log(currIngredient);
+        if(currIngredient){
+            postData.ingredients.push(currIngredient);
+        }
+        setCurrIngredient('');
+        console.log(postData.ingredients);
+    }
+
+    
     const handleSubmit = async (e) =>{
         e.preventDefault();
         //console.log(postData.creator);
@@ -42,7 +54,7 @@ const CreateRecipeForm = ()=>{
                     });
         });
         
-        console.log(postData);
+        //console.log(postData);
         
         //window.location.href = "/account";
     }
@@ -55,7 +67,7 @@ const CreateRecipeForm = ()=>{
                     className={classes.formElement} 
                     name="name"
                     variant="outlined"
-                    label="Recipe Name"
+                    label="Enter Recipe Name"
                     fullWidth
                     value={postData.name}
                     onChange={(e) => setPostData({...postData, name: e.target.value})}
@@ -65,13 +77,25 @@ const CreateRecipeForm = ()=>{
                     name="calories"
                     type="number"
                     variant="outlined"
-                    label="Calories"
+                    label="Enter Number of Calories"
                     fullWidth
                     value={postData.calories}
                     onChange={(e) => setPostData({...postData, calories: e.target.value})}
                 />
-
-                <FileBase 
+                <Container className={classes.ingredientsContainer}>
+                    <Typography variant="h6"> Ingredients: </Typography>
+                    <TextField
+                        className={classes.formElement} 
+                        name="ingredients"
+                        variant="outlined"
+                        label="Enter a Ingredient"
+                        fullWidth
+                        value = {currIngredient}
+                        onChange={(e) => setCurrIngredient(e.target.value)}
+                    />
+                    <Button className={classes.addButton} onClick={addIngredient}> Add ingredient </Button>
+                </Container>
+                <FileBase
                     type = "file"
                     multiple = {false}
                     onDone = {({base64}) => setPostData({...postData, image: base64})}

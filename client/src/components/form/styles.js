@@ -31,6 +31,19 @@ export default makeStyles((theme) => ({
       backgroundColor: "#ffaaff"
     }
   },
+  ingredientsContainer:{
+    marginTop:"5%",
+    marginBottom:"5%",
+  },
+  addButton: {
+    marginTop: 30,
+    marginBottom: 5,
+    backgroundColor: '#0cad92',
+    color: 'white',
+    "&:hover": {
+      backgroundColor: "#ffaaff"
+    }
+  },
   formElement: {
     marginTop: '2.5%',
   },

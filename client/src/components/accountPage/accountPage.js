@@ -12,6 +12,10 @@ const AccountPage = ()=>{
     const classes = useStyles();
     const dispatch = useDispatch();
 
+    window.onload = (e) =>{
+        handleSubmit(e);
+    }
+    
     const token = {
         token: localStorage.getItem('roundaboutToken')
     }
