@@ -12,6 +12,8 @@ export default (recipes = [], action) => {
             return [...recipes, action.payload];
         case 'ADDTOFAVOURITES':
             return [...recipes, action.payload];
+        case 'REMOVEFROMFAVOURITES':
+            return [...recipes, action.payload];
         default:
             return recipes;
     }

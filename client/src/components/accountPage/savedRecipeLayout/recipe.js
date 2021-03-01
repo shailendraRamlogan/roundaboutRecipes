@@ -2,9 +2,26 @@ import { formatMs } from '@material-ui/core';
 import React from 'react';
 import useStyles from './styles';
 import {Button} from '@material-ui/core';
+import {useDispatch} from 'react-redux';
+import {removeFavouriteRecipes} from '../../../actions/recipe';
 
-const SavedRecipe = ({title, calories, image, ingredients}) => {
+const SavedRecipe = ({recipeids,title, calories, image, ingredients}) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+
+    const handleRemove = (e) =>{
+        e.preventDefault();
+        const message ={
+            userid: localStorage.getItem('roundaboutToken'),
+            recipeid: recipeids
+        }
+        dispatch(removeFavouriteRecipes(message))
+            .then((payload) =>{
+                alert(payload.message);
+                
+            });
+        
+    }
     return(
         <div className={classes.gridItem}>
             <h1 className={classes.title}> {title} </h1>
@@ -21,7 +38,7 @@ const SavedRecipe = ({title, calories, image, ingredients}) => {
                     <li className={classes.ingredientX}>{ingredient}</li>
                 ))}
             </ol>
-            <Button className={classes.favButton}>Remove From Favourites</Button>
+            <Button className={classes.favButton} onClick={handleRemove}>Remove From Favourites</Button>
         </div>
     );
 

@@ -67,6 +67,29 @@ export const getSearchRecipes = async (req, res) => {
 }
 
 
+export const removeFavRecipe = async (req, res) => {
+    const param = req.body;
+    const userid = param.userid;
+    const recipeid = param.recipeid;
+    
+    user.updateOne({
+        _id: userid
+    }, {$pull:{"savedRecipes":recipeid}},(err, previousUsers) =>{
+        if(err){
+            return res.send({
+                success: false,
+                message: `Error: cannot find user`
+            });
+        }
+        //console.log(previousUsers);
+        return res.send({
+            success: true,
+            message: 'recipe successfully removed from favourites'
+        }); 
+    });
+}
+
+
 export const getFavouriteRecipes = async (req, res) => {
     const param = req.body.token;
     

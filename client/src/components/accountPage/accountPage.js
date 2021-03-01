@@ -38,7 +38,7 @@ const AccountPage = ()=>{
                 if(payload.success === true){
                     setSavedRecipes(payload.recipes);
                     setUserRecipes([]);
-                    console.log(userRecipes);
+                    //console.log(userRecipes);
                 }
                 else{
                     alert(payload.message);
@@ -62,6 +62,7 @@ const AccountPage = ()=>{
                     {savedRecipes.map(recipe =>(
                         <SavedRecipe
                         key={recipe._id}
+                        recipeids={recipe._id}
                         title={recipe.name}
                         calories={recipe.calories}
                         image={recipe.image} 

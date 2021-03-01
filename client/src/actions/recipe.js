@@ -60,3 +60,14 @@ export const getFavouriteRecipes = (token) => async (dispatch) =>{
         console.log(error);
     }
 }
+
+
+export const removeFavouriteRecipes = (token) => async (dispatch) =>{
+    try {
+        const {data} = await api.removeFavouriteRecipes(token);
+        dispatch({type: 'REMOVEFROMFAVOURITES', payload: data});
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
