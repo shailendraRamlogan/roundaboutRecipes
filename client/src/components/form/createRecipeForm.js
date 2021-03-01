@@ -3,6 +3,7 @@ import { TextField, Button, Typography, Paper, Container} from '@material-ui/cor
 import {useDispatch} from 'react-redux';
 import FileBase from 'react-file-base64';
 
+import Recipe from './creationIngredients/recipe';
 import useStyles from './styles';
 import {findUser} from '../../actions/users';
 import {createRecipe, getRecipes} from '../../actions/recipe';
@@ -13,7 +14,7 @@ const CreateRecipeForm = ()=>{
     const dispatch = useDispatch();
     const [token, setToken] = useState({token: localStorage.getItem('roundaboutToken')});
     const [currIngredient, setCurrIngredient] = useState("");
-
+    
     const clear = () => {
         setPostData({name: '', calories: '', image: '', ingredients: [], creator: ''});
     };
@@ -84,6 +85,12 @@ const CreateRecipeForm = ()=>{
                 />
                 <Container className={classes.ingredientsContainer}>
                     <Typography variant="h6"> Ingredients: </Typography>
+                    {postData.ingredients.map(ingredient =>(
+                        <Recipe
+                            post = {postData}
+                            name = {ingredient}
+                        />
+                    ))}
                     <TextField
                         className={classes.formElement} 
                         name="ingredients"
