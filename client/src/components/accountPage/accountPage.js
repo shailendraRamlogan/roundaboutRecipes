@@ -62,6 +62,7 @@ const AccountPage = ()=>{
                     {savedRecipes.map(recipe =>(
                         <SavedRecipe
                         key={recipe._id}
+                        refresh = {fetchSavedRecipes}
                         recipeids={recipe._id}
                         title={recipe.name}
                         calories={recipe.calories}

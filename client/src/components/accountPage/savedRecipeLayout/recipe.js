@@ -5,7 +5,7 @@ import {Button} from '@material-ui/core';
 import {useDispatch} from 'react-redux';
 import {removeFavouriteRecipes} from '../../../actions/recipe';
 
-const SavedRecipe = ({recipeids,title, calories, image, ingredients}) => {
+const SavedRecipe = ({refresh,recipeids,title, calories, image, ingredients}) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ const SavedRecipe = ({recipeids,title, calories, image, ingredients}) => {
         dispatch(removeFavouriteRecipes(message))
             .then((payload) =>{
                 alert(payload.message);
-                
+                refresh(e);
             });
         
     }
