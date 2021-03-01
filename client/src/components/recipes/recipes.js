@@ -12,7 +12,7 @@ const SearchPage = () => {
     const [query, setQuery] = useState({param: ""});
     const dispatch = useDispatch();
   
-    const getItems = async (e) => {
+    window.onload = async (e) => {
       e.preventDefault();
       dispatch(getRecipes())
         .then((payload) =>{
