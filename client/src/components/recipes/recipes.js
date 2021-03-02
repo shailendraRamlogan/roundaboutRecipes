@@ -49,7 +49,6 @@ const SearchPage = () => {
           <input className={classes.searchBar} type="text" value={query.param} onChange={updateSearch}/>
           <button className={classes.searchButton} type="submit">Search</button>
         </form>
-        <h2 className={classes.heading1}>All of these recipes include</h2>
         <Paper className={classes.paper}>
         <div className={classes.gridContainer}>
           {recipes.map(recipe =>(

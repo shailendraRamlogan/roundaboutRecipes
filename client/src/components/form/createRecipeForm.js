@@ -6,7 +6,7 @@ import FileBase from 'react-file-base64';
 import Recipe from './creationIngredients/recipe';
 import useStyles from './styles';
 import {findUser} from '../../actions/users';
-import {createRecipe, getRecipes} from '../../actions/recipe';
+import {createRecipe} from '../../actions/recipe';
 
 const CreateRecipeForm = ()=>{
     const [postData, setPostData] = useState({name: '', calories: '', image: '', ingredients: [], creator: '', creatorID: ''});
@@ -21,12 +21,12 @@ const CreateRecipeForm = ()=>{
 
     const addIngredient = (e) =>{
         e.preventDefault();
-        console.log(currIngredient);
+        //console.log(currIngredient);
         if(currIngredient){
             postData.ingredients.push(currIngredient);
         }
         setCurrIngredient('');
-        console.log(postData.ingredients);
+        //console.log(postData.ingredients);
     }
 
     
@@ -41,7 +41,7 @@ const CreateRecipeForm = ()=>{
                 //console.log(payload.name);
                 dispatch(createRecipe(postData))
                     .then((payload) => {
-                        console.log(payload);
+                        //console.log(payload);
                         if(payload.success === true){
                             alert(payload.message);
                             clear();

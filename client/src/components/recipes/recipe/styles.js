@@ -41,8 +41,20 @@ export default makeStyles({
     justifyContent: 'space-between',
     margin: '20px',
   },
+  titleDiv:{
+    marginTop: '10%',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    wordWrap: 'break-word',
+    display: 'block',
+    lineHeight: '1.5em',
+    maxHeight: '5em', 
+    backgroundColor: '#BF9D7A',
+  },
   title: {
-    padding: '0 16px',
+    fontSize: '20px',
+    color: 'white',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
   cardActions: {
     padding: '0 16px 8px 16px',
@@ -62,16 +74,16 @@ export default makeStyles({
     backgroundColor: 'white',
     borderRadius: '5%',
   },
-  title: {
-    marginTop: '5%',
-    paddingTop: '10px',
-    fontSize: '25px',
-    backgroundColor: '#BF9D7A',
-    color: 'white',
+  ingredientLabel:{
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
   ingredientX: {
+    paddingTop: '10px',
+    paddingBottom: '10px',
     listStyleType: 'none',
     borderBottom: '2px solid black',
+    marginRight: '10%',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
   form: {
     paddingTop: '2%',
@@ -84,7 +96,6 @@ export default makeStyles({
   ingredients: {
     backgroundColor: '#D4DCA9',
     height:'20%',
-    
     textAlign: 'left',
     paddingTop: '10px',
     paddingBottom: '40px',

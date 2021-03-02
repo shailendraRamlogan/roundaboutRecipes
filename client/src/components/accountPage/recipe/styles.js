@@ -41,9 +41,6 @@ export default makeStyles({
     justifyContent: 'space-between',
     margin: '20px',
   },
-  title: {
-    padding: '0 16px',
-  },
   cardActions: {
     padding: '0 16px 8px 16px',
     display: 'flex',
@@ -61,17 +58,28 @@ export default makeStyles({
     backgroundColor: 'white',
     borderRadius: '5%',
   },
-  title: {
+  titleDiv:{
     marginTop: '10%',
-    paddingTop: '10px',
-    paddingBottom: '10px',
-    fontSize: '25px',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    wordWrap: 'break-word',
+    display: 'block',
+    lineHeight: '1.5em',
+    maxHeight: '5em', 
     backgroundColor: '#BF9D7A',
+  },
+  title: {
+    fontSize: '20px',
     color: 'white',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
   ingredientX: {
+    paddingTop: '10px',
+    paddingBottom: '10px',
     listStyleType: 'none',
     borderBottom: '2px solid black',
+    marginRight: '10%',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
   form: {
     paddingTop: '2%',

@@ -26,6 +26,7 @@ export default makeStyles((theme) => ({
     paddingTop: '5%',
     textAlign: 'center',
     color: 'white',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
   heading1: {
     marginBottom: '2.5%',

@@ -7,7 +7,9 @@ const Recipe = ({title, calories, image, ingredients}) => {
     const classes = useStyles();
     return(
         <div className={classes.gridItem}>
+            <div className={classes.titleDiv}>
             <h1 className={classes.title}> {title} </h1>
+            </div>
             <div className={classes.images}>
             <img src={image} alt="" style={{width: '300px'}}/>
             </div>

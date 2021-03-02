@@ -27,7 +27,9 @@ const Recipe = ({id,title, calories, image, ingredients}) => {
     }
     return(
         <div className={classes.gridItem}>
+            <div className={classes.titleDiv}>
             <h1 className={classes.title}> {title} </h1>
+            </div>
             <div className={classes.images}>
             <img className={classes.image} src={image} alt=""  style={{width: '300px'}}/>
             </div>
@@ -36,7 +38,7 @@ const Recipe = ({id,title, calories, image, ingredients}) => {
             <p>{calories}</p>
             </div>
             <ol className={classes.ingredients}>
-                <h4>Ingredients:</h4>
+                <h4 className={classes.ingredientLabel}>Ingredients:</h4>
                 {ingredients.map(ingredient =>(
                     <li className={classes.ingredientX}>{ingredient}</li>
                 ))}
