@@ -38,14 +38,14 @@ const App = () =>{
     return(
         <div>
             <AppBar className={classes.appBar} position= "static" color= "inherit">
-                <Typography className={classes.heading} variant="h2" align="left">Roundabout Recipes</Typography>
-                
+            <   ul className={classes.menuList}>
+                    <li className={classes.menuItem}><Button className={classes.menuLinks} href="/searchpage">Search For Recipes</Button></li>
+                    <li className={classes.menuItem}><Button className={classes.menuLinks} href="/account">Account</Button></li>
+                    <Button className={classes.logout} onClick={logout}> Logout </Button>
+                </ul>
+                <Typography className={classes.heading} variant="h2" align="left">Roundabout Recipes</Typography>                
             </AppBar>
-                    <ul className={classes.menuList}>
-                        <li className={classes.menuItem}><Button className={classes.menuLinks} href="/searchpage">Search For Recipes</Button></li>
-                        <li className={classes.menuItem}><Button className={classes.menuLinks} href="/account">Account</Button></li>
-                        <Button className={classes.logout} onClick={logout}> Logout </Button>
-                    </ul>
+                    
                     
             
 

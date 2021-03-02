@@ -27,11 +27,15 @@ const SearchPage = () => {
   
     const getSearch = (e) => {
       e.preventDefault();
-      console.log(query);
+      //console.log(query);
       dispatch(getSearchRecipes(query))
         .then((payload) =>{
-          console.log(payload.recipes);
-          setRecipes(payload.recipes);
+          if(payload.success === true){
+            setRecipes(payload.recipes);
+          }
+          else{
+            alert(payload.message);
+          }
         });
       
       setQuery({...query, param: ""});

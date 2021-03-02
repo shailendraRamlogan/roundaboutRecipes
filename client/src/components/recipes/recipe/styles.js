@@ -50,9 +50,9 @@ export default makeStyles({
     justifyContent: 'space-between',
   },
   gridItem: {
-    height: '800px',
+    maxHeight: '750px',
     float: 'left',
-    width: '80%',
+    maxWidth: '80%',
     border: '1px solid rgba(0, 0, 0, 0.8)',
     paddingBottom: '2%',
     fontSize: '15px',
@@ -63,9 +63,8 @@ export default makeStyles({
     borderRadius: '5%',
   },
   title: {
-    marginTop: '10%',
+    marginTop: '5%',
     paddingTop: '10px',
-    paddingBottom: '10px',
     fontSize: '25px',
     backgroundColor: '#BF9D7A',
     color: 'white',
@@ -94,9 +93,10 @@ export default makeStyles({
     borderRadius: '15px',
   },
   images: {
-    paddingTop: '20px',
-    paddingBottom: '10px',
-    marginTop: '-3%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '40%',
     backgroundColor: '#EBF2EA',
   },
   favButton: {

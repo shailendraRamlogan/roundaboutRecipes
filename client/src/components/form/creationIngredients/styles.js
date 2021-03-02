@@ -51,7 +51,7 @@ export default makeStyles({
     justifyContent: 'space-between',
   },
   gridItem: {
-    height: '800px',
+    height: '750px',
     float: 'left',
     width: '100%',
     border: '1px solid rgba(0, 0, 0, 0.8)',

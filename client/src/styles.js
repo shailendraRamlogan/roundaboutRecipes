@@ -52,8 +52,8 @@ export default makeStyles(() => ({
         overflow: 'hidden',
         backgroundColor: '#0ABDA0',
         position: 'fixed',
-        marginTop: '-5%',
-        width: '100%',
+        marginTop: '-2.5%',
+        width: '100.5%',
         
       },
 

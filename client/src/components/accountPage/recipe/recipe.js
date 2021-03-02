@@ -9,7 +9,7 @@ const Recipe = ({title, calories, image, ingredients}) => {
         <div className={classes.gridItem}>
             <h1 className={classes.title}> {title} </h1>
             <div className={classes.images}>
-            <img src={image} alt="" />
+            <img src={image} alt="" style={{width: '300px'}}/>
             </div>
             <div className={classes.calories}>
             <h4>Calories</h4>

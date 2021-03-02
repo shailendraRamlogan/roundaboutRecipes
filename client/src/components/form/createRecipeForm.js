@@ -41,6 +41,7 @@ const CreateRecipeForm = ()=>{
                 //console.log(payload.name);
                 dispatch(createRecipe(postData))
                     .then((payload) => {
+                        console.log(payload);
                         if(payload.success === true){
                             alert(payload.message);
                             clear();
