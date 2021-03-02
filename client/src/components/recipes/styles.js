@@ -12,9 +12,9 @@ export default makeStyles((theme) => ({
     textAlign: 'center',
   },
   paper: {
-    marginLeft: '8%',
+    marginLeft: '5%',
     marginTop: '5%',
-    width: '80%',
+    width: '90%',
     padding: theme.spacing(2),
   },
   page: {

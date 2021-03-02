@@ -22,7 +22,13 @@ export default makeStyles(() => ({
         backgroundColor: '#0cad92',
       },
       heading: {
-        paddingLeft: '20px',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        wordWrap: 'break-word',
+        display: 'block',
+        lineHeight: '2em',
+        maxHeight: '5em',
+        paddingLeft: '15px',
         color: 'white',
       },
       menu: {
@@ -46,9 +52,10 @@ export default makeStyles(() => ({
         }
       },
       menuList: {
-        marginLeft: '-8px',
+        marginLeft: '-10px',
         listStyleType: 'none',
         padding: '0',
+        paddingRight: '10px',
         overflow: 'hidden',
         backgroundColor: '#0ABDA0',
         position: 'fixed',

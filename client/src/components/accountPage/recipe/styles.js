@@ -48,6 +48,7 @@ export default makeStyles({
   },
   gridItem: {
     height: '750px',
+    minWidth: '350px',
     float: 'left',
     width: '100%',
     border: '1px solid rgba(0, 0, 0, 0.8)',
@@ -55,6 +56,7 @@ export default makeStyles({
     fontSize: '15px',
     textAlign: 'center',
     marginBottom: '5%',
+    marginLeft: '5%',
     backgroundColor: 'white',
     borderRadius: '5%',
   },

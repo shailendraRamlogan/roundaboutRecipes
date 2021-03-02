@@ -63,6 +63,7 @@ export default makeStyles({
   },
   gridItem: {
     maxHeight: '750px',
+    minWidth: '350px',
     float: 'left',
     maxWidth: '80%',
     border: '1px solid rgba(0, 0, 0, 0.8)',
