@@ -56,7 +56,6 @@ export default makeStyles({
     fontSize: '15px',
     textAlign: 'center',
     marginBottom: '5%',
-    marginLeft: '5%',
     backgroundColor: 'white',
     borderRadius: '5%',
   },
@@ -66,8 +65,8 @@ export default makeStyles({
     textOverflow: 'ellipsis',
     wordWrap: 'break-word',
     display: 'block',
-    lineHeight: '1.25em',
-    maxHeight: '4em', 
+    lineHeight: '1.5em',
+    maxHeight: '5em', 
     backgroundColor: '#BF9D7A',
   },
   title: {

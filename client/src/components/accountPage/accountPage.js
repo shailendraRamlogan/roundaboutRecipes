@@ -51,17 +51,19 @@ const AccountPage = ()=>{
             });
     }
     return(
-        <Paper className={classes.paper}>
+        
             
             <Container className={classes.mainContainer}>
-                <Typography variant="h5">Hi there !!</Typography>
-                <Typography variant="h6">Please feel free to create new recipes</Typography>
-                <Typography variant="h6">You can also view recipes you created and your saved recipes</Typography>
+                <Container className={classes.navContainer}>
+                <Typography variant="h4">Hi there !!</Typography>
+                <Typography variant="h5">Please feel free to create new recipes</Typography>
+                <Typography variant="h5">You can also view recipes you created and your saved recipes</Typography>
                 
                 <Button  className={classes.button} variant="contained" href="/createRecipe" color="primary" fullWidth>createRecipe</Button>
                 <Button   className={classes.button} variant="contained" color="primary" fullWidth onClick={handleSubmit}>Get My Recipes</Button>
                 <Button   className={classes.button} variant="contained" color="primary" fullWidth onClick={fetchSavedRecipes}>Get Liked Recipes</Button>    
-                
+                </Container>
+                <Paper className={classes.paper}>
                 <div className={classes.gridContainer}>
                     {savedRecipes.map(recipe =>(
                         <SavedRecipe
@@ -85,9 +87,9 @@ const AccountPage = ()=>{
                     ))}
                 </div>
 
-                
+                </Paper>
             </Container>
-        </Paper>
+        
     );
 }
 

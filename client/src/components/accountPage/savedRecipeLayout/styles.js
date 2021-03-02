@@ -55,7 +55,6 @@ export default makeStyles({
     paddingBottom: '2%',
     fontSize: '15px',
     textAlign: 'center',
-    marginBottom: '5%',
     backgroundColor: 'white',
     borderRadius: '5%',
   },
@@ -93,7 +92,6 @@ export default makeStyles({
   ingredients: {
     backgroundColor: '#D4DCA9',
     height:'20%',
-    
     textAlign: 'left',
     paddingTop: '10px',
     paddingBottom: '40px',

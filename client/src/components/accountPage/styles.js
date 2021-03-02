@@ -7,6 +7,10 @@ export default makeStyles((theme) => ({
         width: '90%',
         padding: theme.spacing(2),
     },
+    navContainer:{
+      paddingTop: '10%',
+      color: 'white',
+    },
     mainContainer: {
         marginTop: '5%',
         textAlign: 'center',
@@ -22,7 +26,8 @@ export default makeStyles((theme) => ({
       },
     button: {
       borderRadius:'0',
-      marginLeft: '1.5%',
+      marginLeft: '2%',
+      marginTop: '2%',
       width: '30%',
         backgroundColor: '#0cad92',
         color:'white',

@@ -49,6 +49,9 @@ export default makeStyles((theme) => ({
     border: 'none',
     padding: '10px 20px',
     color: 'white',
+    "&:hover": {
+      backgroundColor: "#ffaaff"
+    }
   },
   gridContainer: {
     display: 'grid',
