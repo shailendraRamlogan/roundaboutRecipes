@@ -79,6 +79,8 @@ const AccountPage = ()=>{
                     {userRecipes.map(recipe =>(
                         <Recipe
                         key={recipe._id}
+                        refresh = {handleSubmit}
+                        recipeids = {recipe._id}
                         title={recipe.name}
                         calories={recipe.calories}
                         image={recipe.image} 

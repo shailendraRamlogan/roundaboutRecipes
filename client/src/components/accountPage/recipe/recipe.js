@@ -2,9 +2,25 @@ import { formatMs } from '@material-ui/core';
 import React from 'react';
 import useStyles from './styles';
 import {Button} from '@material-ui/core';
+import {useDispatch} from 'react-redux';
+import {removeRecipes} from '../../../actions/recipe';
 
-const Recipe = ({title, calories, image, ingredients}) => {
+const Recipe = ({refresh,recipeids,title, calories, image, ingredients}) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+
+    const handleDelete = (e) =>{
+        e.preventDefault();
+        const message ={
+            userid: localStorage.getItem('roundaboutToken'),
+            recipeid: recipeids
+        }
+        dispatch(removeRecipes(message))
+            .then((payload) =>{
+                alert(payload.message);
+                refresh(e);
+            });
+    }
     return(
         <div className={classes.gridItem}>
             <div className={classes.titleDiv}>
@@ -24,7 +40,7 @@ const Recipe = ({title, calories, image, ingredients}) => {
                 ))}
             </ol>
             <Button className={classes.editButton}>Edit Recipe</Button>
-            <Button className={classes.removeButton}>Remove Recipe</Button>
+            <Button onClick={handleDelete} className={classes.removeButton}>Remove Recipe</Button>
         </div>
     );
 

@@ -8,7 +8,7 @@ export default makeStyles((theme) => ({
         padding: theme.spacing(2),
     },
     navContainer:{
-      paddingTop: '10%',
+      paddingTop: '15%',
       color: 'white',
     },
     mainContainer: {

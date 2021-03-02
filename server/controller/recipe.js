@@ -267,3 +267,45 @@ export const createRecipe = async (req, res) =>{
         res.status(409).json({message: error.message});
     }
 }
+
+
+export const deleteRecipe = async (req,res) =>{
+    const recipeid = req.body.recipeid;
+    const userid = req.body.userid;
+
+    user.updateOne({
+        _id: userid
+    }, {$pull:{"savedRecipes":recipeid, "createdRecipes":recipeid}},(err, previousUsers) =>{
+        if(err){
+            return res.send({
+                success: false,
+                message: `Error: cannot find user`
+            });
+        }
+        //console.log(previousUsers);
+        recipe.findOneAndDelete({
+            _id:recipeid
+        },(errors,recipes) =>{
+            if(errors){
+                return res.send({
+                    success: false,
+                    message: `Error: cannot find recipe`
+                });
+            }
+            if(recipes){
+                return res.send({
+                    success: true,
+                    message: 'recipe successfully removed from favourites'
+                });
+            }
+            else if(!recipes){
+                return res.send({
+                    success: false,
+                    message: `Error: Problem occured when attempting to delete recipe`
+                }); 
+            }
+        });
+    });
+
+
+}

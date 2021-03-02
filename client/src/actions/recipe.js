@@ -71,3 +71,13 @@ export const removeFavouriteRecipes = (token) => async (dispatch) =>{
         console.log(error);
     }
 }
+
+export const removeRecipes = (token) => async (dispatch) =>{
+    try {
+        const {data} = await api.removeRecipes(token);
+        dispatch({type: 'DELETERECIPE', payload: data});
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}

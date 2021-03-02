@@ -1,5 +1,5 @@
 import express from 'express';
-import {getRecipes, createRecipe, getUserRecipes, getSearchRecipes, addFavouriteRecipes, getFavouriteRecipes, removeFavRecipe} from '../controller/recipe.js';
+import {getRecipes, createRecipe, getUserRecipes, getSearchRecipes, addFavouriteRecipes, getFavouriteRecipes, removeFavRecipe, deleteRecipe} from '../controller/recipe.js';
 
 const router = express.Router();
 
@@ -10,4 +10,5 @@ router.post('/getSearch', getSearchRecipes);
 router.post('/addFavourite', addFavouriteRecipes);
 router.post('/getFavourite', getFavouriteRecipes);
 router.post('/removeFavourite', removeFavRecipe);
+router.post('/removeRecipe', deleteRecipe);
 export default router;
