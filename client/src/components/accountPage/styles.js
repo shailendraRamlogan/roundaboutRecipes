@@ -21,6 +21,8 @@ export default makeStyles((theme) => ({
         justifyContent: 'center',
       },
     button: {
+      borderRadius:'0',
+      marginLeft: '1.5%',
       width: '30%',
         backgroundColor: '#0cad92',
         color:'white',

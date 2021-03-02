@@ -64,8 +64,8 @@ export default makeStyles({
     textOverflow: 'ellipsis',
     wordWrap: 'break-word',
     display: 'block',
-    lineHeight: '1.5em',
-    maxHeight: '5em', 
+    lineHeight: '1.25em',
+    maxHeight: '4em', 
     backgroundColor: '#BF9D7A',
   },
   title: {
