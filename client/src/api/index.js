@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const authUrl = 'http://localhost:5000/user';
-const recipeUrl = 'http://localhost:5000/recipes';
+const authUrl = 'https://roundaboutrecipes.herokuapp.com/user';
+const recipeUrl = 'https://roundaboutrecipes.herokuapp.com/recipes';
 
 export const createUser = (newUser) => axios.post(`${authUrl}/create`, newUser);
 export const loginUser = (user) => axios.post(`${authUrl}/login`, user);

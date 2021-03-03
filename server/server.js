@@ -2,13 +2,12 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import path from 'path';
-
+import dotenv from 'dotenv';
 import recipes from './routes/recipes.js';
 import users from './routes/users.js';
 
 const app = express();
-
+dotenv.config();
 
 //Middleware
 
@@ -16,11 +15,11 @@ app.use(bodyParser.json());
 
 //database
 
-const db = 'mongodb+srv://admin:admin123@cluster0.kjcvb.mongodb.net/<dbname>?retryWrites=true&w=majority';
+//const db = process.env.CONNECTION_URI;
 
 //connect to database
 app.use(cors())
-mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
     .then(() => console.log('mongoDB connected'))
     .catch(err => console.log(err));
 
@@ -28,12 +27,9 @@ mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true, useUnif
 app.use('/recipes', recipes);
 app.use('/user', users);
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('../client/build'));
-    app.get('*', (req,res) =>{
-        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-    });
-}
+app.get('/', (req,res) =>{
+    res.send('hello to recipes api');
+})
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`server started on port ${port}`));
