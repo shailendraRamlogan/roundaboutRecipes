@@ -64,7 +64,7 @@ const CreateRecipeForm = ()=>{
     return(
         <Paper className = {classes.paper}>
             <form autoComplete="off" noValidate className = {classes.form} onSubmit = {handleSubmit}>
-                <Typography variant="h6"> Please fill out this form to create a new recipe </Typography>
+                <Typography className={classes.heading} variant="h6"> Please fill out this form to create a new recipe </Typography>
                 <TextField
                     className={classes.formElement} 
                     name="name"

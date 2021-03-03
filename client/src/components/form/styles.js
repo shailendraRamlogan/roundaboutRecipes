@@ -58,6 +58,12 @@ export default makeStyles((theme) => ({
       backgroundColor: "#ffaaff"
     }
   },
+  heading:{
+    marginTop: '5%',
+    '@media (max-width: 1600px)' : {
+      marginTop: '15%',
+    },
+  },
   imageUpload: {
     backgroundColor: 'red'
   },

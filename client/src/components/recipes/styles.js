@@ -24,6 +24,9 @@ export default makeStyles((theme) => ({
   heading: {
     marginTop: '5%',
     paddingTop: '5%',
+    '@media (max-width: 1600px)' : {
+      paddingTop: '15%',
+    },
     textAlign: 'center',
     color: 'white',
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
@@ -56,6 +59,10 @@ export default makeStyles((theme) => ({
   gridContainer: {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
+    '@media (max-width: 1600px)' : {
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      marginLeft: '-3%',
+    },
     gap: '10px',
   },
 }));

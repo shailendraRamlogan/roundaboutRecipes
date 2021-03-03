@@ -39,7 +39,6 @@ const Recipe = ({refresh,recipeids,title, calories, image, ingredients}) => {
                     <li className={classes.ingredientX}>{ingredient}</li>
                 ))}
             </ol>
-            <Button className={classes.editButton}>Edit Recipe</Button>
             <Button onClick={handleDelete} className={classes.removeButton}>Remove Recipe</Button>
         </div>
     );

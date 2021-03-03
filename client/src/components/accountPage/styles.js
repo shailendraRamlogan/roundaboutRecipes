@@ -40,6 +40,9 @@ export default makeStyles((theme) => ({
         marginTop: '5%',
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
+        '@media (max-width: 1600px)' : {
+          gridTemplateColumns: 'repeat(2, 1fr)',
+        },
         gap: '2%',
       },
 }));
