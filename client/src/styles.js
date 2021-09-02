@@ -89,7 +89,6 @@ export default makeStyles(() => ({
       },
     },
     logo:{
-      filter: 'brightness(.5)',
       zIndex: '10',
       position: 'relative',
       width: '100%',
