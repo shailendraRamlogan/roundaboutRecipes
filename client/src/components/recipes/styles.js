@@ -12,14 +12,17 @@ export default makeStyles((theme) => ({
     textAlign: 'center',
   },
   paper: {
-    marginLeft: '5%',
-    marginTop: '5%',
-    width: '90%',
-    padding: theme.spacing(2),
+    backgroundColor:'white',
+    maxWidth: '80rem',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingTop: '4rem',
+    paddingBottom: '4rem',
   },
-  page: {
-    minHeight: '100vh',
-    paddingBottom: '5%',
+  searchContainer:{
+    maxWidth: '80rem',
+    marginRight: 'auto',
+    marginLeft: 'auto',
   },
   heading: {
     marginTop: '5%',
@@ -28,13 +31,8 @@ export default makeStyles((theme) => ({
       paddingTop: '15%',
     },
     textAlign: 'center',
-    color: 'white',
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  },
-  heading1: {
-    marginBottom: '2.5%',
-    textAlign: 'center',
-    color: 'white',
+    color: 'black',
+    fontFamily: `'Pacifico', cursive`,
   },
   searchForm: {
     minHeight: '10vh',
@@ -46,6 +44,7 @@ export default makeStyles((theme) => ({
     width: '50%',
     border: 'none',
     padding: '10px',
+    backgroundColor: '#ffd4f0',
   },
   searchButton: {
     background: '#0cad92',
@@ -58,11 +57,20 @@ export default makeStyles((theme) => ({
   },
   gridContainer: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
+    maxWidth: '80rem',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    padding: '1rem',
+    gridTemplateColumns: 'repeat(4, 1fr)',
     '@media (max-width: 1600px)' : {
-      gridTemplateColumns: 'repeat(2, 1fr)',
-      marginLeft: '-3%',
+      gridTemplateColumns: 'repeat(3, 1fr)',
     },
-    gap: '10px',
+    '@media (max-width: 900px)' : {
+      gridTemplateColumns: 'repeat(2, 1fr)',
+    },
+    '@media (max-width: 600px)' : {
+      gridTemplateColumns: 'repeat(1, 1fr)',
+    },
+    gap: '1rem',
   },
 }));

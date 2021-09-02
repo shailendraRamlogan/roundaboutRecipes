@@ -53,17 +53,17 @@ const AccountPage = ()=>{
     return(
         
             
-            <Container className={classes.mainContainer}>
-                <Container className={classes.navContainer}>
-                <Typography variant="h4">Hi there !!</Typography>
-                <Typography variant="h5">Please feel free to create new recipes</Typography>
-                <Typography variant="h5">You can also view recipes you created and your saved recipes</Typography>
+            <div className={classes.mainContainer}>
+                <div className={classes.navContainer}>
+                <h4>Hi there !!</h4>
+                <h4>Please feel free to create new recipes</h4>
+                <h4>You can also view recipes you created and your saved recipes</h4>
                 
-                <Button  className={classes.button} variant="contained" href="/createRecipe" color="primary" fullWidth>createRecipe</Button>
-                <Button   className={classes.button} variant="contained" color="primary" fullWidth onClick={handleSubmit}>Get My Recipes</Button>
-                <Button   className={classes.button} variant="contained" color="primary" fullWidth onClick={fetchSavedRecipes}>Get Liked Recipes</Button>    
-                </Container>
-                <Paper className={classes.paper}>
+                <Button  className={classes.button} variant="contained" href="/createRecipe" color="primary" fullWidth>create Recipe</Button>
+                <Button   className={classes.button} variant="contained" color="primary" fullWidth onClick={handleSubmit}>My Recipes</Button>
+                <Button   className={classes.button} variant="contained" color="primary" fullWidth onClick={fetchSavedRecipes}>Saved Recipes</Button>    
+                </div>
+                <div className={classes.paper}>
                 <div className={classes.gridContainer}>
                     {savedRecipes.map(recipe =>(
                         <SavedRecipe
@@ -89,8 +89,8 @@ const AccountPage = ()=>{
                     ))}
                 </div>
 
-                </Paper>
-            </Container>
+                </div>
+            </div>
         
     );
 }

@@ -44,12 +44,14 @@ const SearchPage = () => {
 
     return(
         <div className={classes.page}>
+        <div className={classes.searchContainer}>
         <h1 className={classes.heading}>Please enter a ingredient you want to cook with !</h1>
         <form onSubmit={getSearch} className={classes.searchForm}>
           <input className={classes.searchBar} type="text" value={query.param} onChange={updateSearch}/>
           <button className={classes.searchButton} type="submit">Search</button>
         </form>
-        <Paper className={classes.paper}>
+        </div>
+        <div className={classes.paper}>
         <div className={classes.gridContainer}>
           {recipes.map(recipe =>(
             <Recipe
@@ -62,7 +64,7 @@ const SearchPage = () => {
             />
           ))}
         </div>
-        </Paper>
+        </div>
         </div>
       );
     

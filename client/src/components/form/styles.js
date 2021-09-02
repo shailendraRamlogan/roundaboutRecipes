@@ -7,19 +7,20 @@ export default makeStyles((theme) => ({
     },
   },
   paper: {
-    marginLeft: '25%',
-    marginTop: '5%',
-    width: '50%',
+    marginTop: '5rem',
+    marginBottom: '5rem',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: '80rem',
     padding: theme.spacing(2),
   },
   form: {
-    marginTop: '5%',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
   },
   fileInput: {
-    width: '97%',
+    width: '100%',
     margin: '10px 0',
   },
   buttonSubmit: {
@@ -32,8 +33,8 @@ export default makeStyles((theme) => ({
     }
   },
   ingredientsContainer:{
-    marginTop:"5%",
-    marginBottom:"5%",
+    marginTop:"4rem",
+    marginBottom:"4rem",
   },
   addButton: {
     marginTop: 30,
@@ -45,7 +46,7 @@ export default makeStyles((theme) => ({
     }
   },
   formElement: {
-    marginTop: '2.5%',
+    marginTop: '2rem',
   },
   allowLogin: {
     marginTop: '20px',
@@ -59,9 +60,10 @@ export default makeStyles((theme) => ({
     }
   },
   heading:{
-    marginTop: '5%',
+    marginTop: '5rem',
+    fontFamily: `'Pacifico', cursive`,
     '@media (max-width: 1600px)' : {
-      marginTop: '15%',
+      marginTop: '10rem',
     },
   },
   imageUpload: {

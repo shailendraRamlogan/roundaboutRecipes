@@ -8,13 +8,18 @@ export default makeStyles((theme) => ({
         padding: theme.spacing(2),
     },
     navContainer:{
-      paddingTop: '15%',
-      color: 'white',
+      color: 'black',
+      fontFamily: `'Pacifico', cursive`,
+      fontSize: '34px',
+      maxWidth: '80rem',
+      marginLeft: 'auto',
+      marginRight: 'auto'
     },
     mainContainer: {
-        marginTop: '5%',
         textAlign: 'center',
         justifyContent: 'center',
+        paddingTop: '4rem',
+        paddingBottom: '4rem',
     },
     accountPageButton: {
         marginTop: '2.5%',
@@ -25,24 +30,34 @@ export default makeStyles((theme) => ({
         justifyContent: 'center',
       },
     button: {
-      borderRadius:'0',
-      marginLeft: '2%',
-      marginTop: '2%',
+      borderRadius:'10px',
+      marginLeft: '1rem',
+      marginRight: '1rem',
+      marginTop: '1rem',
       width: '30%',
         backgroundColor: '#0cad92',
         color:'white',
         "&:hover": {
-          backgroundColor: "#ffaaff"
+          backgroundColor: "#ffaaff",
+          color: '#0cad92'
         }
       },
       gridContainer: {
-        paddingBottom: '20%',
-        marginTop: '5%',
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
+        maxWidth: '80rem',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        padding: '1rem',
+        gridTemplateColumns: 'repeat(4, 1fr)',
         '@media (max-width: 1600px)' : {
+          gridTemplateColumns: 'repeat(3, 1fr)',
+        },
+        '@media (max-width: 830px)' : {
           gridTemplateColumns: 'repeat(2, 1fr)',
         },
-        gap: '2%',
+        '@media (max-width: 600px)' : {
+          gridTemplateColumns: 'repeat(1, 1fr)',
+        },
+        gap: '1rem',
       },
 }));
