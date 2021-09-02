@@ -76,3 +76,7 @@ body{
 .awssld__content>img{
     filter: brightness(0.5);
 }
+
+.awssld__bullets {
+    bottom: 40px;
+}
